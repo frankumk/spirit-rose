@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Roses from '../views/Roses.vue'
+import Rituals from '../views/Rituals.vue'
+import Herbs from '../views/Herbs.vue'
+import YoniSteam from '../views/YoniSteam.vue'
+import WombHeal from '../views/WombHeal.vue'
 
 Vue.use(VueRouter)
 
@@ -11,12 +16,29 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/roses',
+    name: 'Rose Medicine',
+    component: Roses
+  },
+  {
+    path: '/rituals',
+    name: 'Ritual Creation',
+    component: Rituals
+  },
+  {
+    path: '/yonisteam',
+    name: 'Yoni Steaming',
+    component: YoniSteam
+  },
+  {
+    path: '/herbs',
+    name: 'Herbal Medicine',
+    component: Herbs
+  },
+  {
+    path: '/wombhealing',
+    name: 'Womb Healing',
+    component: WombHeal
   }
 ]
 
