@@ -23,6 +23,8 @@
 
 #nav {
   padding: 30px;
+  font-family: 'Bad Script', cursive;
+  font-size: 2rem;
 }
 
 #nav a {
