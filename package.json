@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node server/server.js"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -12,8 +13,11 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
+    "vuetify": "^2.4.9",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -21,6 +25,11 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "vue-template-compiler": "^2.6.11"
+    "nodemon": "^2.0.7",
+    "sass": "^1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-vuetify": "~2.3.1",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.2"
   }
 }
