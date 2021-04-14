@@ -2,6 +2,7 @@ const Sequelize = require('sequelize')
 const { STRING } = Sequelize
 const db = require('../db')
 
+
 const User = db.define('user',{
   name: {
       type: STRING,
@@ -9,6 +10,4 @@ const User = db.define('user',{
   } 
 })
 
-module.exports = {
-  User
-}
+module.exports = User

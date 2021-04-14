@@ -7,7 +7,10 @@ const bodyParser = require('body-parser');
 app.use(express.json())
 app.use(cors())
 app.use(bodyParser.json());
-const {db, syncAndSeed, User } = require('./database/db');
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+const {db, syncAndSeed} = require('./database/index');
 
 app.get('/',(req,res,next) => res.sendFile(path.join(__dirname,'../public/index.html')))
 app.use('/dist', express.static(path.join(__dirname, '../dist')));
