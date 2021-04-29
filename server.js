@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({
 }));
 const {db, syncAndSeed} = require('./database/index');
 
-app.get('/',(req,res,next) => res.sendFile(path.join(__dirname,'../public/index.html')))
-app.use('/dist', express.static(path.join(__dirname, '../dist')));
-app.use('/assets',express.static(path.join(__dirname,'../src/assets')));
+app.get('/',(req,res,next) => res.sendFile(path.join(__dirname,'./public/index.html')))
+app.use('/dist', express.static(path.join(__dirname, './dist')));
+app.use('/assets',express.static(path.join(__dirname,'./src/assets')));
 
 // api routes
 //app.use('/api/inventory', require('./api/Inventory'))
