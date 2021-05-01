@@ -13,22 +13,24 @@
       </v-toolbar>
     <router-view/> -->
 <div id="nav">
-  <v-toolbar app color="#CC5500" dark>
-    <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon>
-    <v-toolbar-title><v-tab to="/">Spirit Rose</v-tab></v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-tab to="/roses">Rose Medicine</v-tab>
-    <v-tab to="/rituals">Ritual Cretion</v-tab>
-    <v-tab to="/yonisteam">Yoni Steam</v-tab>
-    <v-tab to="/herbs">Herbs</v-tab>
-    <v-tab to="/wombhealing">Womb Healing</v-tab>
+  <v-toolbar color="#CC5500" dark>
+    <!-- <v-toolbar-side-icon @click="drawer = !drawer"></v-toolbar-side-icon> -->
+    <v-tabs v-model="tab"> 
+      <v-tab left to="/">Spirit Rose</v-tab>
+      <v-spacer></v-spacer>
+      <v-tab right grow to="/roses">Rose Medicine</v-tab>
+      <v-tab right grow to="/rituals">Ritual Cretion</v-tab>
+      <v-tab right grow to="/yonisteam">Yoni Steam</v-tab>
+      <v-tab right grow to="/herbs">Herbs</v-tab>
+      <v-tab right grow to="/wombhealing">Womb Healing</v-tab>
+    </v-tabs>
     
   </v-toolbar>
   </div>
     
-    <v-content>
+    <v-main>
       <router-view></router-view>
-    </v-content>
+    </v-main>
     <v-footer absolute>
       <v-col
         class="text-center"
@@ -43,14 +45,15 @@
 <script>
 export default{
   data: () => ({
-    drawer: false
+    drawer: false,
+    tab: null
   })
 }
 </script>
 <style>
   #nav{
     font-family: 'Bad Script', cursive;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     color: white;
   }

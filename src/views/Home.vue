@@ -91,6 +91,7 @@
         to journey alongside you as you create your sacred space, your 
         sacred ritual, your self care, your container of creation. 
       </p>
+      <v-btn>Book an Appointment</v-btn>
     </v-col>
     <v-col md="3">
       <v-img :src="images.alicia"></v-img>
@@ -102,7 +103,7 @@
     </v-col>
     <v-col md="6">
       <p>
-      Yoni is a sanskrit word, literally meaning female genitalia, but 
+        Yoni is a sanskrit word, literally meaning female genitalia, but 
         it also is used to refer to womb, origin, source. Yoni Steaming is
        an ancient way of Being Water. Blessing and cleansing our Sacred 
        Waters within, we create a sacred space to connect to our womb portal. 

@@ -4,6 +4,7 @@ module.exports = router
 
 router.get('/', async (req, res, next) => {
   try {
+    console.log(`mmmmaaaaaaaade it here!`)
     res.send(await Inventory.findAll());
   } 
   catch (ex) {
