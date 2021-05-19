@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid>
+  <v-container fluid class="text-center">
     <!-- <div id="introduction">
     <p>
       Welcome to Spirit Rose! In this space we Honor Ourselves 
@@ -70,7 +70,7 @@
     <v-img :src="images.alicia"></v-img>
   </div> -->
   <v-row justify="space-around">
-    <v-col md="6">
+    <v-col md="5">
       <p>
         Welcome to Spirit Rose! In this space we Honor Ourselves 
         as the Radiant Magical Rose that we are, we See Ourselves 
@@ -101,7 +101,7 @@
     <v-col md="3">
       <v-img :src="images.yellow"></v-img>
     </v-col>
-    <v-col md="6">
+    <v-col md="5">
       <p>
         Yoni is a sanskrit word, literally meaning female genitalia, but 
         it also is used to refer to womb, origin, source. Yoni Steaming is

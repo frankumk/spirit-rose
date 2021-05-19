@@ -24,6 +24,10 @@
       <v-tab right grow to="/herbs">Herbs</v-tab>
       <v-tab right grow to="/wombhealing">Womb Healing</v-tab>
     </v-tabs>
+
+    <v-icon>
+      mdi-cart
+    </v-icon>
     
   </v-toolbar>
   </div>
@@ -31,11 +35,18 @@
     <v-main>
       <router-view></router-view>
     </v-main>
-    <v-footer absolute>
+    <v-footer color="#CC5500">
       <v-col
         class="text-center"
       >
-      footer
+      <v-btn
+        v-for="icon in icons"
+        :key="icon"
+        class="mx-4"
+        icon
+      >
+      <v-icon>{{ icon }}</v-icon>
+      </v-btn>
       </v-col>
     </v-footer>
   </div>
@@ -46,7 +57,13 @@
 export default{
   data: () => ({
     drawer: false,
-    tab: null
+    tab: null,
+    icons: [
+      'mdi-calendar',
+      'mdi-instagram',
+      'mdi-email',
+      'mdi-map'
+    ]
   })
 }
 </script>
