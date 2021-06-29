@@ -6,6 +6,8 @@ import Rituals from '../views/Rituals.vue'
 import Herbs from '../views/Herbs.vue'
 import YoniSteam from '../views/YoniSteam.vue'
 import WombHeal from '../views/WombHeal.vue'
+import Appointments from '../views/Appointments.vue'
+import ContactForm from '../views/ContactForm.vue'
 
 Vue.use(VueRouter)
 
@@ -39,6 +41,16 @@ const routes = [
     path: '/wombhealing',
     name: 'Womb Healing',
     component: WombHeal
+  },
+  {
+    path: '/appointments',
+    name: 'Appointments',
+    component: Appointments
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: ContactForm
   }
 ]
 

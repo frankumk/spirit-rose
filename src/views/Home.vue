@@ -91,7 +91,7 @@
         to journey alongside you as you create your sacred space, your 
         sacred ritual, your self care, your container of creation. 
       </p>
-      <v-btn>Book an Appointment</v-btn>
+      <v-btn to="/appointments">Book an Appointment</v-btn>
     </v-col>
     <v-col md="3">
       <v-img :src="images.alicia"></v-img>

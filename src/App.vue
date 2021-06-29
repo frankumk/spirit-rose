@@ -82,11 +82,12 @@
       >
       <v-btn
         v-for="icon in icons"
-        :key="icon"
+        :key="icon.id"
         class="mx-4"
         icon
+        :to="icon.address"
       >
-      <v-icon>{{ icon }}</v-icon>
+      <v-icon>{{ icon.icon }}</v-icon>
       </v-btn>
       </v-col>
     </v-footer>
@@ -107,10 +108,10 @@ export default{
       { id: 4, name: "Sale", path: "/roses" }
     ],
     icons: [
-      'mdi-calendar',
-      'mdi-instagram',
-      'mdi-email',
-      'mdi-map'
+      { id: 0, icon: 'mdi-calendar', address: "/appointments" },
+      { id: 1, icon: 'mdi-instagram', address: "/instagram" },
+      { id: 2, icon: 'mdi-email', address: "/contact" },
+      { id: 3, icon: 'mdi-map', address: "/contact" }
     ]
   })
 }
