@@ -4,6 +4,7 @@ const db = require("./db");
 const User = require("./models/User");
 const Cart= require("./models/Cart");
 const Inventory = require("./models/Inventory");
+const Appointment = require("./models/Appointment")
 
 const syncAndSeed = async() =>{
   await db.sync({ force: true })
@@ -21,6 +22,7 @@ module.exports = {
   models: {
     User,
     Cart,
-    Inventory
+    Inventory,
+    Appointment
   }
 }
