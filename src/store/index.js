@@ -6,11 +6,16 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    inventory: []
+    inventory: [],
+    appointments: [],
+    apptsAvailableOnDate: []
   },
   mutations: {
     SET_INVENTORY(state, items){
       state.inventory = items;
+    },
+    SET_APPOINTMENTS(state, appts){
+      state.appointments = appts;
     },
   },
   actions: {
@@ -24,7 +29,18 @@ export default new Vuex.Store({
       }catch(ex){
         console.log(`ex: `, ex)
       }
+    },
+    async getAppointments({ commit }){
+      try{
+        const appts = (await axios.get('/api/appointment')).data
+        console.log(appts)
+        commit("SET_APPOINTMENTS", appts)
+
+      }catch(ex){
+        console.log(`ex: `, ex)
+      }
     }
+
   },
   modules: {
   }

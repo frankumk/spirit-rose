@@ -19,6 +19,7 @@ app.use('/assets',express.static(path.join(__dirname,'../src/assets')));
 
 // api routes
 app.use('/api/inventory', require('./api/Inventory'))
+app.use('/api/appointments', require('./api/appointments'))
 
 
 app.use((req, res, next) => {
