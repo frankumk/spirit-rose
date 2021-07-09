@@ -13,9 +13,9 @@ const syncAndSeed = async() =>{
   await Inventory.create({item: "Rose Bead Necklace", price: 35, description: "Wear Rose Medicine daily over your heart and discover your magical essence."})
   await Inventory.create({item: "Rose Bead Pendant", price: 33})
   await Inventory.create({item: "Fertility Goddess and Pregnancy Protection Medallion", price: 33})
-  await Appointment.create({date: new Date()})
-  await Appointment.create({date: new Date()})
-  await Appointment.create({date: new Date(), name: "Kayla"})
+  await Appointment.create({date: new Date(), time: '3:00pm'})
+  await Appointment.create({date: new Date(), time: '2:00pm'})
+  await Appointment.create({date: new Date(), time: '1:00pm', name: "Kayla"})
 
 }
 

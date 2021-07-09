@@ -32,7 +32,7 @@ export default new Vuex.Store({
     },
     async getAppointments({ commit }){
       try{
-        const appts = (await axios.get('/api/appointment')).data
+        const appts = (await axios.get('/api/appointments')).data
         console.log(appts)
         commit("SET_APPOINTMENTS", appts)
 
