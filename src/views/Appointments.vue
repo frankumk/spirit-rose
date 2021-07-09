@@ -31,11 +31,21 @@
         </v-sheet>
       </v-col>
       <v-col cols="4">
-        <h2 v-if='date'>Available Appointments on {{date}}</h2>
-        <h2 v-else>Select a Date...</h2>
-        <ul>
-          <li v-for="appt in todayAppts">{{appt.time}}</li>
-        </ul>
+        <v-card
+          class="pa-4"
+          width="100%"
+          tile
+        >
+          <v-list>
+            <v-list-item-group
+              v-model="appointment"
+            >
+              <h4 v-if='date'>Available Appointments on {{date}}</h4>
+              <h4 v-else>Select a Date...</h4>
+              <v-list-item v-for="appt in todayAppts" key="appt.id">{{appt.time}}</v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-card>
       </v-col>
       <v-col cols="4">
 
