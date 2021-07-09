@@ -42,13 +42,21 @@
             >
               <h4 v-if='date'>Available Appointments on {{date}}</h4>
               <h4 v-else>Select a Date...</h4>
-              <v-list-item v-for="appt in todayAppts" key="appt.id">{{appt.time}}</v-list-item>
+              <v-list-item v-for="appt in todayAppts" :key="appt.id" :value="appt.time">{{appt.time}}</v-list-item>
             </v-list-item-group>
           </v-list>
         </v-card>
       </v-col>
       <v-col cols="4">
-
+        <v-card
+          v-if="appointment"
+          class="pa-4"
+          width="100%"
+          tile
+        >
+          <h4 v-if='appointment'>Book {{date}} at {{appointment}}</h4>
+          <h4 v-else>Select a Time...</h4>
+        </v-card>
       </v-col>
     </v-row>
 </template>
@@ -59,7 +67,7 @@ import { mapState } from'vuex'
 export default{
   data: () => ({
     date: '',
-    appointment: ''
+    appointment: null
   }),
   created(){
     console.log(`getting`)
