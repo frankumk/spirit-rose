@@ -49,13 +49,32 @@
       </v-col>
       <v-col cols="4">
         <v-card
-          v-if="appointment"
+          v-if="date"
           class="pa-4"
           width="100%"
           tile
         >
           <h4 v-if='appointment'>Book {{date}} at {{appointment}}</h4>
           <h4 v-else>Select a Time...</h4>
+          <v-form v-if='appointment'>
+            <v-text-field
+            label="Name"
+            v-model="name"
+            required
+          ></v-text-field>
+          <v-text-field
+            label="Phone Number"
+            v-model="phone"
+            required
+          ></v-text-field>
+          <v-btn
+            type="submit"
+            :disabled="valid"
+            @click="book"
+          >
+            BOOK
+          </v-btn>
+          </v-form>
         </v-card>
       </v-col>
     </v-row>
@@ -67,7 +86,9 @@ import { mapState } from'vuex'
 export default{
   data: () => ({
     date: '',
-    appointment: null
+    appointment: null,
+    name: '',
+    phone: ''
   }),
   created(){
     console.log(`getting`)
@@ -81,6 +102,11 @@ export default{
       return this.appointments.filter(appt=>appt.date===this.date&&appt.name===null)
     }
   },
+  methods: {
+    book(evt){
+      evt.preventDefault();
+    }
+  }
 }
 </script>
 
