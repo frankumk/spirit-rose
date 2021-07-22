@@ -13,6 +13,9 @@ const Appointment = db.define('appointment',{
   },
   name: {
     type: STRING,
+  },
+  phone: {
+    type: STRING,
   }
 })
 

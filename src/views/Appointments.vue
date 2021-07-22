@@ -104,7 +104,12 @@ export default{
   },
   methods: {
     book(evt){
-      evt.preventDefault();
+      evt.preventDefault()
+      console.log(this.date, " + ", typeof this.date)
+      this.$store.dispatch('bookAppt', {date: this.date, time: this.appointment, name: this.name, phone: this.phone})
+      this.name=''
+      this.phone=''
+      this.appointment=null
     }
   }
 }

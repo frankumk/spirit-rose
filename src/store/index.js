@@ -39,6 +39,17 @@ export default new Vuex.Store({
       }catch(ex){
         console.log(`ex: `, ex)
       }
+    },
+    async bookAppt({ commit }, appt){
+      try{
+        console.log("date", appt)
+        const appts = (await axios.put('/api/appointments', { date: appt.date, time: appt.time, name: appt.name, phone: appt.phone })).data
+        console.log(appts)
+        commit("SET_APPOINTMENTS", appts)
+
+      }catch(ex){
+        console.log(`ex: `, ex)
+      }
     }
 
   },
