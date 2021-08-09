@@ -54,9 +54,9 @@
           width="100%"
           tile
         >
-          <h4 v-if='appointment'>Book {{date}} at {{appointment}}</h4>
-          <h4 v-else>Select a Time...</h4>
-          <v-form v-if='appointment'>
+          <h4 v-if='appointment && !booked'>Book {{date}} at {{appointment}}</h4>
+          <h4 v-else-if="!appointment || !booked">Select a Time...</h4>
+          <v-form v-if='appointment && !booked'>
             <v-text-field
             label="Name"
             v-model="name"
@@ -75,6 +75,8 @@
             BOOK
           </v-btn>
           </v-form>
+
+          <h4 v-if="booked">You are all set! See you on {{ date }} at {{ appointment }}!</h4>
         </v-card>
       </v-col>
     </v-row>
@@ -88,7 +90,8 @@ export default{
     date: '',
     appointment: null,
     name: '',
-    phone: ''
+    phone: '',
+    booked: false
   }),
   created(){
     console.log(`getting`)
@@ -105,11 +108,11 @@ export default{
   methods: {
     book(evt){
       evt.preventDefault()
-      console.log(this.date, " + ", typeof this.date)
+      console.log(this.appointment)
       this.$store.dispatch('bookAppt', {date: this.date, time: this.appointment, name: this.name, phone: this.phone})
       this.name=''
       this.phone=''
-      this.appointment=null
+      this.booked = true
     }
   }
 }
