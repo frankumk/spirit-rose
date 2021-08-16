@@ -10,12 +10,14 @@
       >
         <!-- <v-img :src="img" :alt="name" height="200px" position="left">
         </v-img> -->
-        <v-card-title>
-          {{name}}
+        <v-card-title class="justify-center">
+          <div class="title-wrap">
+            {{name}}
+          </div>
         </v-card-title>
-        <v-card-subtitle>
+        <!-- <v-card-subtitle>
           {{description}}
-        </v-card-subtitle>
+        </v-card-subtitle> -->
         <v-card-subtitle>
           {{price}}
         </v-card-subtitle>
@@ -35,3 +37,13 @@
   }
 
 </script>
+<style>
+
+.title-wrap{
+    white-space: nowrap ;
+    word-break: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+</style>
