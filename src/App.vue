@@ -44,6 +44,7 @@
           <v-list-item
             v-for="header in headers"
             :key="header"
+            :to="header.path"
           >
             <v-list-item-title>{{ header.name }}</v-list-item-title>
             <v-divider></v-divider>
