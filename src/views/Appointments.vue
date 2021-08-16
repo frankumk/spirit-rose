@@ -1,24 +1,6 @@
 <template>
-<!-- <v-container>
-  <v-calendar></v-calendar>
-</v-container> -->
-
-<!-- <v-row class="text-center">
-      <v-col col="12">
-        <v-sheet height="500">
-          <v-calendar
-            ref="calendar"
-            :now="today"
-            :value="today"
-            :events="events"
-            color="#CC5500"
-            type="month"
-          ></v-calendar>
-        </v-sheet>
-      </v-col>
-    </v-row> -->
-    <v-row>
-      <v-col cols="4">
+    <v-row align="center" justify="center">
+      <v-col :cols="cols">
         <v-sheet>
           <v-row>
             <v-date-picker
@@ -30,7 +12,8 @@
           </v-row>
         </v-sheet>
       </v-col>
-      <v-col cols="4">
+
+      <v-col :cols="cols">
         <v-card
           class="pa-4"
           width="100%"
@@ -47,7 +30,7 @@
           </v-list>
         </v-card>
       </v-col>
-      <v-col cols="4">
+      <v-col :cols="cols">
         <v-card
           v-if="date"
           class="pa-4"
@@ -91,7 +74,7 @@ export default{
     appointment: null,
     name: '',
     phone: '',
-    booked: false
+    booked: false,
   }),
   created(){
     console.log(`getting`)
@@ -103,6 +86,15 @@ export default{
     }),
     todayAppts(){
       return this.appointments.filter(appt=>appt.date===this.date&&appt.name===null)
+    },
+    cols(){
+      switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return 10
+          case 'sm': return 10
+          case 'md': return 4
+          case 'lg': return 4
+          case 'xl': return 4
+        }
     }
   },
   methods: {
