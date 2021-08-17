@@ -1,68 +1,32 @@
 <template>
-    <v-card height="400px">
-    <v-footer
-      v-bind="localAttrs"
-      :padless="padless"
-    >
-      <v-card
-        flat
-        tile
-        width="100%"
-        class="red lighten-1 text-center"
+  <v-footer color="#CC5500">
+    <v-col class="text-center">
+      <v-btn
+        v-for="icon in icons"
+        :key="icon.id"
+        class="mx-4"
+        icon
+        :to="icon.address"
+        :href="icon.address"
       >
-        <v-card-text>
-          <v-btn
-            v-for="icon in icons"
-            :key="icon"
-            class="mx-4"
-            icon
-          >
-            <v-icon size="24px">
-              {{ icon }}
-            </v-icon>
-          </v-btn>
-        </v-card-text>
-
-        <v-divider></v-divider>
-
-        <v-card-text class="white--text">
-          {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
-        </v-card-text>
-      </v-card>
-    </v-footer>
-
-    <!-- <v-row
-      align="center"
-      justify="center"
-      class="ma-12"
-    >
-      <v-col
-        cols="12"
-        md="8"
-      > -->
-        <!-- <v-select
-          v-model="variant"
-          :items="items"
-          clearable
-          label="Variant"
-        ></v-select>
-
-        <v-checkbox
-          v-model="padless"
-          hide-details
-          label="Padless"
-        ></v-checkbox> -->
-      </v-col>
-    </v-row>
-  </v-card>
+        <v-icon>{{ icon.icon }}</v-icon>
+      </v-btn>
+    </v-col>
+  </v-footer>
 </template>
 
 <script>
 export default {
+  name: 'Footer',
+  data: () => ({
+    icons: [
+      { id: 0, icon: 'mdi-calendar', address: "/appointments" },
+      { id: 1, icon: 'mdi-instagram', address: "https://www.instagram.com/spiritrose_womb.lovve/" },
+      { id: 2, icon: 'mdi-email', address: "/contact" },
+    ]
+  }),
 
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

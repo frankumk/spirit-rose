@@ -8,7 +8,7 @@ import YoniSteam from '../views/YoniSteam.vue'
 import WombHeal from '../views/WombHeal.vue'
 import Appointments from '../views/Appointments.vue'
 import ContactForm from '../views/ContactForm.vue'
-import Cart from '../views/Cart.vue'
+// import Cart from '../views/Cart.vue'
 
 Vue.use(VueRouter)
 
@@ -53,11 +53,11 @@ const routes = [
     name: 'Contact',
     component: ContactForm
   },
-  {
-    path: '/cart',
-    name: 'Cart',
-    component: Cart
-  }
+  // {
+  //   path: '/cart',
+  //   name: 'Cart',
+  //   component: Cart
+  // }
 ]
 
 const router = new VueRouter({
